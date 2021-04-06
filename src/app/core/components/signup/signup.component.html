@@ -1,30 +1,25 @@
-<img>
+<div class="wrapper">
 <form [formGroup]="userSignUpForm" (ngSubmit)="onSubmit()">
-    
-    <label>
-        First Name:
-        <input type="text" formControlName="firstName">
-      </label>
-    
-      <label>
-        Last Name:
-        <input type="text" formControlName="lastName">
-      </label>
+  <p id="heading">Signup</p>
+  <div>
+    <input type="text" formControlName="firstName" placeholder="First Name">
+  </div>
+  <div class="gap">
+    <input type="text" formControlName="lastName" placeholder="Last Name">
+  </div>
 
-      <label>
-        Email:
-        <input type="text" formControlName="email">
-      </label>
+  <div class="gap">
+    <input type="text" formControlName="email" placeholder="Email">
+  </div>
 
-      <label>
-        Password:
-        <input type="password" formControlName="password">
-      </label>
+  <div class="gap">
+      <input type="password" formControlName="password" placeholder="Password">
+  </div>
 
-      <label>
-        Confirm Password:
-        <input type="password" formControlName="confirmPassword">
-      </label>
+  <div class="gap">
+    <input type="password" formControlName="confirmPassword" placeholder="Confirm Password">
+  </div>
 
-      <button type="submit">SignUp</button>
+  <button class="gap" type="submit">SignUp</button>
 </form>
+</div>

@@ -1,14 +1,14 @@
+<div class="wrapper">
 <form [formGroup]="userLoginForm" (ngSubmit)="onSubmit()">
-
-      <label>
-        Email:
-        <input type="text" formControlName="email">
-      </label>
-
-      <label>
-        Password:
-        <input type="password" formControlName="password">
-      </label>
-
-      <button type="submit">Login</button>
+      <p id="heading">LOGIN</p>
+        <div>
+          <input type="text" formControlName="email" placeholder="Email">
+        </div>
+        <div class="gap">
+          <input type="password" formControlName="password" placeholder="Password">
+        </div>
+        <div>
+        <button class="gap" type="submit">Login</button>
+        </div>
 </form>
+</div>
