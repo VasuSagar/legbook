@@ -8,26 +8,14 @@ img {
 .chat {
     display: flex;
     flex-direction: column;
-    /* margin-top: 5px; */
     border-radius: 3px;
     background-color: #213249;
     margin-right: 8px;
     height: calc(100vh - 85px - 5px);
     width: 200px;
-    /* float: right; */
     position: absolute;
     right: 0;
 }
-
-/* li {
-    display: inline-block;
-    vertical-align: middle;
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    font-size: 14px;
-    list-style-type: none;
-
-} */
 
 li {
     font-family: 'Poppins', sans-serif;
