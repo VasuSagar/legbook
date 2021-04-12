@@ -1,4 +1,7 @@
 <app-header-client></app-header-client>
-<app-post></app-post>
+<ng-container *ngFor="let post of posts">
+    <app-post [post]="post">
+    </app-post>
+</ng-container>
 <!-- Right side chat panel -->
 <app-chat-panel></app-chat-panel>

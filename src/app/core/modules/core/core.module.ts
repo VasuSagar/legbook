@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
+import { HttpClientModule } from '@angular/common/http';
 
 /**
  * Custom angular notifier options
@@ -52,7 +53,8 @@ const customNotifierOptions: NotifierOptions = {
   imports: [
     CommonModule,
     NotifierModule.withConfig(customNotifierOptions),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports:[NotifierModule,ReactiveFormsModule]
 })

@@ -1,1 +1,17 @@
-<p>post works!</p>
+<!-- User profile info starts-->
+<img src="assets/images/userprofilephoto.jpg">
+<br>
+userName
+<!-- User profile info stops -->
+<br>
+
+<!-- Post description and image window starts -->
+{{post.createdDate | date:'medium'}}
+<br>
+{{post.description}}
+<!-- Post description and image window ends -->
+<br>
+
+<!-- post comment and like window starts -->
+<app-post-comments></app-post-comments>
+<!-- post comment and like window ends -->

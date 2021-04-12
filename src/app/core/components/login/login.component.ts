@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NotifierService } from 'angular-notifier';
+import { Login } from '../../models/models';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +13,7 @@ import { NotifierService } from 'angular-notifier';
 export class LoginComponent implements OnInit {
   userLoginForm:FormGroup;
 
-  constructor(private fb:FormBuilder,private notifier:NotifierService) { }
+  constructor(private fb:FormBuilder,private notifier:NotifierService,private authService:AuthService,private router:Router) { }
 
   ngOnInit(): void {
     this.userLoginForm = this.fb.group({
@@ -27,6 +30,24 @@ export class LoginComponent implements OnInit {
     else{
       //send data to api
       console.log("login form",this.userLoginForm);
+
+      //create loginReq object
+      const loginReq:Login={
+        email:this.userLoginForm.controls['email'].value,
+        password:this.userLoginForm.controls['password'].value
+      }
+
+      this.authService.login(loginReq).subscribe(data=>{
+        console.log("after login data",data)
+          localStorage.setItem('authToken',data.authenticationToken);      
+          this.notifier.notify('success','Login successful');
+          this.router.navigate(['home']);
+      },
+      error=>{
+        this.notifier.notify('error','Email Or Password is incorrect');
+      }
+      );
+
     }
   }
 
