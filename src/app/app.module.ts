@@ -12,6 +12,7 @@ import { PostComponent } from './client/components/post/post.component';
 import { PostDescriptionComponent } from './client/components/post-description/post-description.component';
 import { PostCommentsComponent } from './client/components/post-comments/post-comments.component';
 import { HeaderClientComponent } from './client/components/header-client/header-client.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { HeaderClientComponent } from './client/components/header-client/header-
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     CoreModule
   ],

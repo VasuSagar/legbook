@@ -6,12 +6,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-  @Input()
-  post:any;
+
+  @Input() post:any;
   constructor() { }
 
   ngOnInit(): void {
     console.log("post",this.post);
   }
+
+ 
 
 }

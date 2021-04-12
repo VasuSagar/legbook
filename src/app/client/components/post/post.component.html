@@ -1,7 +1,7 @@
 <!-- User profile info starts-->
 <img src="assets/images/userprofilephoto.jpg">
 <br>
-userName
+{{post.userName}}
 <!-- User profile info stops -->
 <br>
 
@@ -13,5 +13,6 @@ userName
 <br>
 
 <!-- post comment and like window starts -->
-<app-post-comments></app-post-comments>
+<app-post-comments [post]="post"></app-post-comments>
+<br>
 <!-- post comment and like window ends -->

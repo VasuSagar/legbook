@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { CreatePost } from 'src/app/core/models/models';
 
 @Injectable({
@@ -17,7 +18,7 @@ export class PostService {
     return this.http.get(this.url+`/posts/v1/`,header);
   }
 
-  createPost(post:CreatePost){
+  createPost(post:CreatePost):Observable<any>{
     var header = {
       headers: new HttpHeaders()
         .set('Authorization',  `Bearer ${localStorage.getItem('authToken')}`)

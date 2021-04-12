@@ -1,4 +1,14 @@
 <app-header-client></app-header-client>
+
+<!-- New post window starts -->
+
+<textarea [(ngModel)]='postDescription' rows="30" cols="120" placeholder="Write your post Vasu">                             
+</textarea>
+<br>
+<button type="submit" (click)="onSubmit()">Submit</button>  <button type="submit" (click)="onCancel()">Cancel</button>
+<br>
+<!-- New post window ends -->
+
 <ng-container *ngFor="let post of posts">
     <app-post [post]="post">
     </app-post>

@@ -1,1 +1,23 @@
-<p>post-comments works!</p>
+<!-- Display like numbers and comment numbers -->
+<img src="assets/images/like.jpg"> {{post.likeCount}}
+<img src="assets/images/comment.jpg">
+<!-- Display like numbers and comment numbers div finishes-->
+<hr>
+<!-- Clickable like and comment buttons starts-->
+<button type="button">Like</button>
+&nbsp;&nbsp;
+<button type="button" (click)="getCommentsForThisPost()">Comment</button> <!-- Get comments once user clicks on this button -->
+<!-- Clickable like and comment buttons finishes-->
+<hr>
+
+<img src="assets/images/userprofilephoto.jpg"> <textarea [(ngModel)]='commentText' rows="2" cols="80" placeholder="Write a comment"></textarea>
+<button type="submit" (click)="onSubmit()">Submit</button>  <button type="submit" (click)="onCancel()">Cancel</button>
+
+<div *ngIf="displayComments">
+    <ng-container *ngFor="let comment of postCommentData">
+        <img src="assets/images/user3.jpg"> {{comment.userName}}
+        <br>
+        {{comment.text}}
+    </ng-container>
+</div>
+
