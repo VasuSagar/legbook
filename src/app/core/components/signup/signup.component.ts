@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NotifierService } from 'angular-notifier';
+import { error } from 'selenium-webdriver';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +13,7 @@ import { NotifierService } from 'angular-notifier';
 export class SignupComponent implements OnInit {
   userSignUpForm: FormGroup;
 
-  constructor(private fb:FormBuilder,private notifier:NotifierService) { }
+  constructor(private fb:FormBuilder,private notifier:NotifierService,private authService:AuthService,private router:Router) { }
 
   ngOnInit(): void {
     this.userSignUpForm = this.fb.group({
@@ -30,6 +33,22 @@ export class SignupComponent implements OnInit {
     console.log("signup form value",this.userSignUpForm.value);
     if(this.checkValidationOfForm()){
       console.log("SUCCESS");
+      const signUpRequestObject={
+        "firstName":this.userSignUpForm.controls['firstName'].value,
+        "lastName":this.userSignUpForm.controls['lastName'].value,
+        "password":this.userSignUpForm.controls['password'].value,
+        "email":this.userSignUpForm.controls['email'].value
+      }
+      this.authService.signUp(signUpRequestObject).subscribe(data=>{
+        this.notifier.notify('success','Registratcion successful');
+        this.notifier.notify('info','Open verification email');
+        this.router.navigate(['login']);
+      },
+      error=>{
+        this.notifier.notify('error',error.error);
+        console.log("signup err",error);
+      });
+
     }
   }
 
@@ -47,7 +66,7 @@ export class SignupComponent implements OnInit {
 
     //check if password matches to confirmPassword
     if(this.checkIfPasswordMatches()){
-      this.notifier.notify('success','Password matches');
+      //this.notifier.notify('success','Password matches');
       return true;
     }
     else{

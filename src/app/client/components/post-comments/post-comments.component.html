@@ -17,7 +17,9 @@
     <ng-container *ngFor="let comment of postCommentData">
         <img src="assets/images/user3.jpg"> {{comment.userName}}
         <br>
-        {{comment.text}}
+        <div style="white-space: pre-wrap;">{{comment.text}}</div>
+        <br>
     </ng-container>
+    
 </div>
 

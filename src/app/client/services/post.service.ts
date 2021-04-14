@@ -7,7 +7,8 @@ import { CreatePost } from 'src/app/core/models/models';
   providedIn: 'root'
 })
 export class PostService {
-  url:string="http://localhost:8081/api";
+  //url:string="http://localhost:8080/api";
+  url:string="http://cs.neonsolutions.xyz:8080/api";
   constructor(private http:HttpClient) { }
 
   getAllPosts(){
