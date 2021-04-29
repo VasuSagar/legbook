@@ -3,3 +3,11 @@ img {
     width: 25px;
     height: 25px;
 }
+
+.likedImg{
+    border: 20px solid blue;
+}
+
+.nonLikedImg{
+    border: 2px solid greenyellow;
+}

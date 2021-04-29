@@ -1,10 +1,10 @@
 <!-- Display like numbers and comment numbers -->
-<img src="assets/images/like.jpg"> {{post.likeCount}}
+<img src="assets/images/like.jpg" [ngClass]="post.isLikedByMe == '1' ? 'likedImg' : 'nonLikedImg'"> {{post.likeCount}}
 <img src="assets/images/comment.jpg">
 <!-- Display like numbers and comment numbers div finishes-->
 <hr>
 <!-- Clickable like and comment buttons starts-->
-<button type="button">Like</button>
+<button type="button"  (click)="setLikeForThisPost()">Like</button>
 &nbsp;&nbsp;
 <button type="button" (click)="getCommentsForThisPost()">Comment</button> <!-- Get comments once user clicks on this button -->
 <!-- Clickable like and comment buttons finishes-->
@@ -22,4 +22,5 @@
     </ng-container>
     
 </div>
+
 

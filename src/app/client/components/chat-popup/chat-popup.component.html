@@ -1,0 +1,19 @@
+<div style="border:1px solid black;">
+    <textarea [(ngModel)]='chatMessage' rows="5" cols="30" placeholder="Write your Chat"></textarea>
+
+    <button (click)="sendMessage()">Send Message</button>
+
+    <br>
+
+    <div *ngFor="let chat of chats">
+        <!-- Sent by self -->
+        <div *ngIf="chat.self" class="container">
+            <p>{{chat.messageText}}</p>
+        </div>
+        <!-- Sent by other party -->
+        <div *ngIf="!chat.self" class="container darker">
+            <p>{{chat.messageText}}</p>
+        </div>
+
+    </div>
+</div>

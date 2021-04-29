@@ -1,5 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommentService } from '../../services/comment.service';
+import { LikeService } from '../../services/like.service';
+
+export enum LikeResponse{
+  likeSaved=0,
+  likeRemoved
+}
 
 @Component({
   selector: 'app-post-comments',
@@ -11,7 +17,7 @@ export class PostCommentsComponent implements OnInit {
   commentText:string;
   postCommentData:any;
   @Input() post:any;
-  constructor(private commentService:CommentService) { }
+  constructor(private commentService:CommentService,private likeService:LikeService) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +29,9 @@ export class PostCommentsComponent implements OnInit {
     }
     this.commentService.createComment(saveCommentRequest).subscribe(data=>{
       console.log("create comemnt",data);
+
+      //after creating comments get comments data for posts
+      this.getCommentsForThisPost();
     });
   }
 
@@ -35,6 +44,27 @@ export class PostCommentsComponent implements OnInit {
       console.log("get comemnt",data);
       this.postCommentData=data;
       this.displayComments=true;
+    });
+  }
+
+  setLikeForThisPost(){
+    console.log(this.post.postId);
+    const saveLikeReqObj={
+      "postId":this.post.postId
+    }
+    this.likeService.setLike(saveLikeReqObj).subscribe((data:LikeResponse)=>{
+      if(data==LikeResponse.likeSaved){
+        //increment counter
+        this.post.likeCount++;
+        this.post.isLikedByMe=1;
+        console.log("After like post",this.post);
+      }
+      else{
+        //decrease counter
+        this.post.likeCount--;
+        this.post.isLikedByMe=0;
+        console.log("After  DISlike post",this.post);
+      }
     });
   }
 

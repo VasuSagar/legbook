@@ -13,6 +13,9 @@ import { PostDescriptionComponent } from './client/components/post-description/p
 import { PostCommentsComponent } from './client/components/post-comments/post-comments.component';
 import { HeaderClientComponent } from './client/components/header-client/header-client.component';
 import { FormsModule } from '@angular/forms';
+import { ChatPopupComponent } from './client/components/chat-popup/chat-popup.component';
+import { TestComponent } from './client/components/test/test.component';
+import { UserInfoComponent } from './client/components/user-info/user-info.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { FormsModule } from '@angular/forms';
     PostComponent,
     PostDescriptionComponent,
     PostCommentsComponent,
-    HeaderClientComponent
+    HeaderClientComponent,
+    ChatPopupComponent,
+    TestComponent,
+    UserInfoComponent
   ],
   imports: [
     BrowserModule,

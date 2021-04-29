@@ -20,4 +20,6 @@ export class AuthService {
   signUp(signUpObj:any){
     return this.http.post(this.url+`/auth/v1/signUp`,signUpObj);
   }
+
+
 }

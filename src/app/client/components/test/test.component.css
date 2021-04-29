@@ -1,0 +1,12 @@
+.chatBox {
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    background-color:chartreuse;
+    margin-right: 200px;
+    height: 150px;
+    width: 400px;
+    position: absolute;
+    right: 0;
+    overflow-y: scroll; 
+}

@@ -1,20 +1,18 @@
 <!-- <p>chat-panel works!</p> -->
 <div class="chat">
-    <li>
+
+    <li *ngFor="let user of usersData;let i=index" (click)="onClickChatUser($event,user.userId,i)">
         <img src="assets/images/user1.jpg">
-        Kate Winslet
+        {{user.userName}}
+        <br>
+        <div *ngIf="displayChatBox[i]" class="chatBox">
+            <br><br>
+            <app-chat-popup [recipentId]="selectedRecipentId"></app-chat-popup>
+            &nbsp;<br>
+        </div>
     </li>
-    <li>
-        <img src="assets/images/user2.jpg">
-        Katrina kaif
-    </li>
-    <li>
-        <img src="assets/images/user3.jpg">
-        Salman Khan
-    </li>
-    <li>
-        <img src="assets/images/user4.jpg">
-        Leonardo DiCaprio
-    </li>
-    
+
 </div>
+
+
+
