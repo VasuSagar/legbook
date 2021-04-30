@@ -1,34 +1,22 @@
-<div class="wrapper">
-    <div class="leftbar">
-        <!-- <p>header-client works!</p> -->
-        <!-- Left alignment starts -->
-        <img src="assets/images/logo.jpg">
-        <input type="text" placeholder="Search..">
-    <!-- Left alignment finishes -->
-    </div>
-
-    <div class="centerbar">
-        <!-- Center alignment starts -->
-        <button type="button">Home</button> <!--This home button will be selected by default-->
-        <button type="button">Videos</button>
-        <button type="button">Groups</button>
-        <!-- Center alignment finishes -->
-    </div>
-
-    <div class="rightbar">
-        <!-- Right alignment stars -->
-        <img src="assets/images/userprofilephoto.jpg">
-        <button type="button">Messages</button>
-        <button type="button">Notifications</button>
-        <details>
-            <summary>Options</summary>
-            <ul>
-                <li><a href="https://www.duckduckgo.com">See your profile</a></li>
-                <li><a href="https://www.duckduckgo.com">Settings</a></li>
-                <li><a href="https://www.duckduckgo.com">Help</a></li>
-                <li><a href="https://www.duckduckgo.com">Log out</a></li>
-            </ul>
-        </details>
-        <!-- Right alignment finishes -->
+<div class="wrapper nes-container is-rounded is-dark">
+    
+    <img src="assets/images/logo.jpg">
+    
+    <input type="text" id="setwidth" placeholder="Search..">
+    
+    <button type=button class="nes-btn">Home</button> 
+    <button type="button" class="nes-btn">Videos</button>
+    <button type="button" class="nes-btn">Groups</button>
+    <button type="button" class="nes-btn">Messages</button>
+    <button type="button" class="nes-btn"> Notifications</button>
+    
+    <div class="nes-select is-dark">
+        <select required id="dark_select">
+            <option value="0" selected>See your profile</option>
+            <option value="1">Settings</option>
+            <option value="2">Help</option>
+            <option value="3">Log out</option>
+        </select>
     </div>
 </div>
+

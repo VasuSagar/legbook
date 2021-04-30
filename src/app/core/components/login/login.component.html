@@ -1,14 +1,8 @@
-<div class="wrapper">
-<form [formGroup]="userLoginForm" (ngSubmit)="onSubmit()">
-      <p id="heading">LOGIN</p>
-        <div>
-          <input type="text" formControlName="email" placeholder="Email">
-        </div>
-        <div class="gap">
-          <input type="password" formControlName="password" placeholder="Password">
-        </div>
-        <div>
-        <button class="gap" type="submit">Login</button>
-        </div>
-</form>
+<div class="wrapper nes-container with-title">
+    <h3 class="title">Login</h3>
+    <form [formGroup]="userLoginForm" (ngSubmit)="onSubmit()">
+        <input type="text" formControlName="email" class="nes-input">
+        <input type="password" formControlName="password" class="nes-input">
+        <button class="nes-btn" type="submit"> Login </button>
+    </form>
 </div>

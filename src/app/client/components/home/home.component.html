@@ -2,11 +2,13 @@
 
 <!-- New post window starts -->
 
-<textarea [(ngModel)]='postDescription' rows="30" cols="120" placeholder="Write your post Vasu">                             
-</textarea>
-<br>
-<button type="submit" (click)="onSubmit()">Submit</button>  <button type="submit" (click)="onCancel()">Cancel</button>
-<br>
+<div class="nes-container is-rounded postarea">
+    <textarea class="nes-textarea" [(ngModel)]='postDescription' rows="30" cols="120" placeholder="Write your post Vasu"></textarea>
+    <button type="submit" class="nes-btn" (click)="onSubmit()">Submit</button>  
+    <button type="submit" class="nes-btn" (click)="onCancel()">Cancel</button>
+</div>
+
+
 <!-- New post window ends -->
 
 <ng-container *ngFor="let post of posts">
