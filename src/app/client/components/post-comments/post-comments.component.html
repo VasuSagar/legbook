@@ -1,18 +1,26 @@
 <!-- Display like numbers and comment numbers -->
-<img src="assets/images/like.jpg" [ngClass]="post.isLikedByMe == '1' ? 'likedImg' : 'nonLikedImg'"> {{post.likeCount}}
-<img src="assets/images/comment.jpg">
+<div style="display:flex; flex-direction: row; justify-content:flex-end">
+        <div class="nes-icon is-small like" (click)="setLikeForThisPost()" [ngClass]="post.isLikedByMe == '1' ? '' : 'is-empty'"></div>
+        <div style="font-size:20px;margin-right: 20px; margin-left:24px;">{{post.likeCount}}</div>
+        <div><img class="nes-avatar is-small" (click)="getCommentsForThisPost()" src="assets/images/comment.jpg" style="image-rendering: pixelated"></div>
 <!-- Display like numbers and comment numbers div finishes-->
-<hr>
 <!-- Clickable like and comment buttons starts-->
-<button type="button"  (click)="setLikeForThisPost()">Like</button>
-&nbsp;&nbsp;
-<button type="button" (click)="getCommentsForThisPost()">Comment</button> <!-- Get comments once user clicks on this button -->
 <!-- Clickable like and comment buttons finishes-->
-<hr>
+</div>
+<hr style="border:none;height:2px;background-color:black;">
 
-<img src="assets/images/userprofilephoto.jpg"> <textarea [(ngModel)]='commentText' rows="2" cols="80" placeholder="Write a comment"></textarea>
-<button type="submit" (click)="onSubmit()">Submit</button>  <button type="submit" (click)="onCancel()">Cancel</button>
+<div style="display:flex; flex-direction: column; margin-top: 20px;margin-left: 20px;">
+    <div style="display:flex; flex-direction:row;">
+        <div> <img style="width:30px; heigh:30px; margin-right:10px;" src="assets/images/userprofilephoto.jpg"></div>
+        <div> <textarea class="nes-textarea" [(ngModel)]='commentText' rows="2" cols="80" placeholder="Write a comment"></textarea></div>
+    </div>
+    <div style="margin-left: 40px">
+        <button type="submit" class="nes-btn" (click)="onSubmit()">Submit</button> 
+        <button type="submit" class="nes-btn cancel is-error" (click)="onCancel()">Cancel</button>
+    <div> 
+</div>
 
+<!--todo-->
 <div *ngIf="displayComments">
     <ng-container *ngFor="let comment of postCommentData">
         <img src="assets/images/user3.jpg"> {{comment.userName}}

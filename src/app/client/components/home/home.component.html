@@ -2,12 +2,11 @@
 
 <!-- New post window starts -->
 
-<div class="nes-container is-rounded postarea">
+<div class="postarea">
     <textarea class="nes-textarea" [(ngModel)]='postDescription' rows="30" cols="120" placeholder="Write your post Vasu"></textarea>
     <button type="submit" class="nes-btn" (click)="onSubmit()">Submit</button>  
-    <button type="submit" class="nes-btn" (click)="onCancel()">Cancel</button>
-</div>
-
+    <button type="submit" class="nes-btn is-error" (click)="onCancel()">Cancel</button>
+<div>
 
 <!-- New post window ends -->
 

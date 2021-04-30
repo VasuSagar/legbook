@@ -1,18 +1,19 @@
-<!-- User profile info starts-->
-<img src="assets/images/userprofilephoto.jpg">
-<br>
-{{post.userName}}
-<!-- User profile info stops -->
-<br>
+<div class="nes-container with-title is-rounded postboxes">
+    <!-- User profile info starts-->
+    <div class="posttext">
+        <div class="a">
+        <div><img src="assets/images/userprofilephoto.jpg">
+            {{post.userName}} </div>
+            <!--{{post.userName}}-->
+        <!-- User profile info stops -->
+        <!-- Post description and image window starts -->
+            {{post.createdDate | date:'medium'}}
+        </div>
+        <div class="b">{{post.description}}</div>
+    </div>
+    <!-- Post description and image window ends -->
 
-<!-- Post description and image window starts -->
-{{post.createdDate | date:'medium'}}
-<br>
-<div style="white-space: pre-wrap;">{{post.description}}</div>
-<!-- Post description and image window ends -->
-<br>
-
-<!-- post comment and like window starts -->
-<app-post-comments [post]="post"></app-post-comments>
-<br>
+    <app-post-comments [post]="post"></app-post-comments>
+    <!-- post comment and like window starts -->
+</div>
 <!-- post comment and like window ends -->

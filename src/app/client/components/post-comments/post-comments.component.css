@@ -1,13 +1,12 @@
-img {
-    margin-left: 5px;
-    width: 25px;
-    height: 25px;
+
+.nes-icon.is-small {
+    transform: scale(2) !important;
 }
 
-.likedImg{
-    border: 20px solid blue;
+.nes-avatar {
+    transform: scale(2) !important;
 }
 
-.nonLikedImg{
-    border: 2px solid greenyellow;
+.cancel {
+    margin-left: 20px;
 }
