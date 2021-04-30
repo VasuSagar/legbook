@@ -17,9 +17,55 @@ export class HomeComponent implements OnInit {
   constructor(private postService:PostService,private notifier:NotifierService) { }
 
   ngOnInit(): void {
+
+      //TEMP CODE FOR HARAYANA
+      const temp= [{
+        "postId": 27,
+        "description": "asdasdasdasdasd",
+        "userId": 1,
+        "createdDate": "2021-04-12T19:40:39.495012Z",
+        "userName": "Vasu Sagar",
+        "likeCount": 5,
+        "commentCount": 2,
+        "isLikedByMe": 0
+    },
+    {
+        "postId": 29,
+        "description": "post with 0 likes",
+        "userId": 1,
+        "createdDate": "2021-04-15T17:18:25.106317Z",
+        "userName": "Vasu Sagar",
+        "likeCount": 2,
+        "commentCount": 15,
+        "isLikedByMe": 1
+    },
+    {
+        "postId": 30,
+        "description": "wasdasdasdasdasd",
+        "userId": 1,
+        "createdDate": "2021-04-17T10:18:56.314625Z",
+        "userName": "Vasu Sagar",
+        "likeCount": 1,
+        "commentCount": 0,
+        "isLikedByMe": 0
+    },
+    {
+        "postId": 31,
+        "description": "awdasdasd",
+        "userId": 1,
+        "createdDate": "2021-04-17T18:08:57.015537Z",
+        "userName": "Vasu Sagar",
+        "likeCount": 2,
+        "commentCount": 3,
+        "isLikedByMe": 1
+    }];
+
+      this.posts=temp;
+
     this.postService.getAllPosts().subscribe((data:any[])=>{
       console.log("get all post",data);
-      this.posts=data;
+      //this.posts=data;
+    
     },
     error=>{
       console.log("Error 1"+error);
