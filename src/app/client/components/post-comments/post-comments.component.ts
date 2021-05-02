@@ -42,7 +42,26 @@ export class PostCommentsComponent implements OnInit {
   getCommentsForThisPost(){
     this.commentService.getAllCommentsByPostId(this.post.postId).subscribe(data=>{
       console.log("get comemnt",data);
-      this.postCommentData=data;
+      const test=[
+        {
+          commentId: 22,
+createdDate: "2021-05-02T09:01:09.360550Z",
+postId: this.post.postId,
+text: "first comment 1",
+userId: 1,
+userName: "Vasu Sagar",
+        },
+        {
+          commentId: 23,
+createdDate: "2021-05-02T09:01:09.360550Z",
+postId: this.post.postId,
+text: "second comment 2",
+userId: 1,
+userName: "Valmiki Brahmin",
+        }
+      ];
+      //this.postCommentData=data;
+      this.postCommentData=test;
       this.displayComments=true;
     });
   }

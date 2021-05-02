@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-      //TEMP CODE FOR HARAYANA
+    //   TEMP CODE FOR HARAYANA
       const temp= [{
         "postId": 27,
         "description": "asdasdasdasdasd",

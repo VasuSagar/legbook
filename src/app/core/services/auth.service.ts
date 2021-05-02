@@ -9,8 +9,8 @@ import { NotifierService } from 'angular-notifier';
   providedIn: 'root'
 })
 export class AuthService {
-  //url:string="http://localhost:8080/api";
-  url:string="http://cs.neonsolutions.xyz:8080/api";
+  url:string="http://localhost:8080/api";
+  //url:string="http://cs.neonsolutions.xyz:8080/api";
   constructor(private http:HttpClient) { }
 
   login(loginObject:Login):Observable<any>{

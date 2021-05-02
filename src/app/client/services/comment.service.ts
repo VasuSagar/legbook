@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CommentService {
-  //url:string="http://localhost:8080/api";
-  url:string="http://cs.neonsolutions.xyz:8080/api";
+  url:string="http://localhost:8080/api";
+  //url:string="http://cs.neonsolutions.xyz:8080/api";
   constructor(private http:HttpClient) { }
 
   getAllCommentsByPostId(postId:number){
